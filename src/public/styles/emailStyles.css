@@ -1,0 +1,200 @@
+.logout {
+  max-width: 100px;
+  align-self: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+}
+
+.header {
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.mailbox-container {
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.compose {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 10;
+  width: 100px;
+}
+
+section {
+  height: calc(100vh - 70px);
+  background-color: #d9d9d9;
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  overflow: auto;
+}
+
+section > button {
+  width: 100%;
+  margin: 2px 0;
+}
+
+.section1 {
+  flex-direction: column;
+  row-gap: 5px;
+  width: 15%;
+}
+
+#inbox {
+  position: relative;
+}
+
+.notifications {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  z-index: 30;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  background-color: red;
+  border-radius: 50%;
+  font-size: 16px;
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  visibility: hidden;
+}
+
+.section2 {
+  width: 35%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.section3 {
+  width: 50%;
+  background-color: #ffffff;
+}
+
+.mail-list {
+  padding: 10px;
+  max-height: 100px;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+}
+
+.unread::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 100%;
+  background-color: red;
+  z-index: 40;
+  top: 0;
+  left: 0;
+}
+
+.mail-list:hover {
+  background-color: #e3ebf7;
+}
+
+.mail-list.active {
+  background-color: #e3ebf7;
+}
+
+.from-time {
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.mail-list-body {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mail-item {
+  padding: 10px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.mail-item-body {
+  text-align: justify;
+}
+
+.mail-item-delete > img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.mail-item-restore > img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.subject-delete,
+.mail-item-from-time {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compose-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  background-color: #ffffff;
+  width: 50%;
+  visibility: hidden;
+}
+
+.send {
+  float: right;
+  margin: 2%;
+}
+
+.compose-header {
+  justify-content: space-between;
+  background-color: #e3ebf7;
+  font-size: 36px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.compose-header-close {
+  cursor: pointer;
+}
+
+.compose-to,
+.compose-subject,
+.compose-body {
+  margin: 2%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .mailbox-container {
+    flex-direction: column;
+  }
+  .section1,
+  .section2,
+  .section3 {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    column-gap: 5px;
+  }
+  section > button {
+    width: 50%;
+    margin: 5px auto;
+  }
+
+  .section2 {
+    height: auto;
+    max-height: 300px;
+  }
+}
